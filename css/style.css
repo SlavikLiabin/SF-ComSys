@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.body-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-left: 86px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-small {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.row1 {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1022px;
+  margin-bottom: 30px;
+}
+
+.line {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
