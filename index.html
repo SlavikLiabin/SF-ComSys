@@ -7,6 +7,14 @@
     <title>Comment system</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Work+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="header">
@@ -49,11 +57,46 @@
               </div>
             </div>
             <div class="comments">
-              <div class="comment-section1"></div>
+              <div class="comment-section1">
+                <div class="numberOfComments" id="numberOfComments"></div>
+                <div class="filter" id="filter">
+                  <select>
+                    <option>По дате</option>
+                    <option>По количеству оценок</option>
+                    <option>По актуальности</option>
+                    <option>По количеству ответов</option>
+                  </select>
+                </div>
+                <div class="select" id="select">
+                  <span class="selectText">Избранное</span>
+                  <img src="./images/Group 1171274238.svg" />
+                </div>
+              </div>
+
+              <div class="comment-body" id="comment-body">
+                <div class="photo"></div>
+                <div class="form-group">
+                  <div class="groupNameNumber">
+                    <input
+                      class="anyMessage"
+                      type="text"
+                      id="name"
+                      placeholder="your name"
+                    />
+                    <div class="numberOfLetter" id="numberOfLetter"></div>
+                  </div>
+                  <input type="text" id="message" placeholder="your message" />
+                </div>
+                <button type="submit" id="comment-add" class="btn">
+                  add Comment
+                </button>
+              </div>
+              <div class="comment-field" id="comment-field"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
