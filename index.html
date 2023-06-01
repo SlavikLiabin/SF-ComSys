@@ -20,7 +20,8 @@
     <div class="header">
       <div class="container">
         <div class="header-inner">
-          <img src="images/header.png" alt="header" />
+          <img src="images/header.png" alt="header" class="headerDesktop" />
+          <img src="images/mobile_header.png" alt="" class="headerMobile" />
         </div>
       </div>
     </div>
@@ -51,7 +52,7 @@
                   <img src="images/section1_small.png" alt="small" />
                 </div>
               </div>
-              <img src="images/section1_big.png" alt="big" />
+              <img src="images/section1_big.png" alt="big" class="bigDesktop" />
               <div class="line">
                 <img src="images/Rectangle 12.png" alt="line" />
               </div>
@@ -83,13 +84,25 @@
                       id="name"
                       placeholder="your name"
                     />
-                    <div class="numberOfLetter" id="numberOfLetter"></div>
+                    <div class="numberOfLetter" id="numberOfLetter">
+                      Макс. 1000 символов
+                    </div>
                   </div>
-                  <input type="text" id="message" placeholder="your message" />
+                  <textarea
+                    class="message"
+                    id="message"
+                    cols="30"
+                    rows="10"
+                    wrap="soft"
+                    placeholder="Введите текст сообщения..."
+                  ></textarea>
                 </div>
-                <button type="submit" id="comment-add" class="btn">
-                  add Comment
-                </button>
+                <div class="warningBtn">
+                  <div class="warning" id="warning"></div>
+                  <button type="submit" id="comment-add" class="btn">
+                    Отправить
+                  </button>
+                </div>
               </div>
               <div class="comment-field" id="comment-field"></div>
             </div>

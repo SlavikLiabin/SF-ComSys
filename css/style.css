@@ -8,6 +8,10 @@
   margin-bottom: 40px;
 }
 
+.headerMobile {
+  display: none;
+}
+
 .container {
   max-width: 1440px;
   padding: 0 10px;
@@ -147,8 +151,9 @@
 }
 
 #message {
-  width: 688px;
+  width: 660px;
   height: 61px;
+  margin-right: 30px;
 }
 
 .comment-field {
@@ -162,6 +167,14 @@
   cursor: pointer;
   width: 213px;
   height: 61px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  background: #a2a2a2;
+  border-radius: 5px;
+  margin-top: 25px;
 }
 
 .filter {
@@ -174,4 +187,59 @@
   color: #000000;
 
   opacity: 0.4;
+}
+
+.message {
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.numberOfLetter {
+  width: 170px;
+  height: 17px;
+  border: 2px solid rgb(140, 0, 255);
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  opacity: 0.4;
+  margin-top: 2px;
+  margin-right: 30px;
+}
+
+.groupNameNumber {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.warningBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.warning {
+  width: 220px;
+  height: 17px;
+  border: 2px red solid;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: right;
+  color: #ff0000;
+}
+
+@media (max-width: 800px) {
+  .headerDesktop,
+  .sidebar,
+  .row1,
+  .bigDesktop {
+    display: none;
+  }
+
+  .headerMobile {
+    display: block;
+  }
 }

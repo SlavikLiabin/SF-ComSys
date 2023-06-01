@@ -1,6 +1,44 @@
 let comments = [];
 
 loadComments();
+showNumberComments();
+
+let myText = document.getElementById("message");
+let result = document.getElementById("numberOfLetter");
+let warning = document.getElementById("warning");
+let btn = document.getElementById("comment-add");
+// устанавливаем ограничение
+let limit = 1000;
+
+// проверяем как выглядят подсчитанные символы в поле ввода
+result.textContent = "Макс. 1000 символов";
+
+// устанавливаем само условие
+myText.addEventListener("input", function () {
+  let textLength = myText.value.length;
+  result.textContent = textLength + "/" + limit;
+  if (textLength > limit) {
+    result.style.color = "red";
+    result.style.opacity = "1";
+    warning.textContent = "Слишком длинное сообщение";
+    btn.setAttribute("disabled", "");
+  } else {
+    warning.textContent = "";
+    result.style.color = "black";
+    result.style.opacity = "0.4";
+    btn.removeAttribute("disabled");
+  }
+
+  if (!textLength) {
+    result.textContent = "Макс. 1000 символов";
+    result.style.color = "black";
+    result.style.opacity = "0.4";
+    btn.style.background = "#A2A2A2";
+  } else {
+    result.textContent = textLength + "/" + limit;
+    btn.style.background = "#ABD873";
+  }
+});
 
 document.getElementById("comment-add").onclick = function () {
   // произошла бедулина, после нажатия на кнопку с типом submit, данные отправляются на сервер, а форма
@@ -10,8 +48,10 @@ document.getElementById("comment-add").onclick = function () {
   event.preventDefault();
   // вытаскиваем имя пользователя, получаем весь объект, а не его содержимое
   let commentName = document.getElementById("name");
+
   // вытаскиваем комментарий, получаем весь объект, а не его содержимое
   let commentBody = document.getElementById("message");
+
   // вытаскиваем значения из объекта с именем пользователя и объекта с комментариями
   // создаем новую переменную comment - объект и вытаскиваем значения и время
   let comment = {
