@@ -78,16 +78,47 @@ document.getElementById("comment-add").onclick = function () {
   showNumberComments();
 };
 
+// смотрим какой параметр для сортировки выбран
+let someSelect;
+let select = document.querySelector("select");
+select.addEventListener("change", () => {
+  someSelect = select.value;
+  arraySorting();
+});
+
+// функция для реализации самой сортировки и вывода сообщений
+
+function arraySorting() {
+  switch (someSelect) {
+    case "date":
+      comments.sort((a, b) => a.time - b.time);
+      console.log(comments);
+      break;
+    case "grade":
+      console.log("Apples are $0.32 a pound.");
+      break;
+    case "relevance":
+      console.log("Bananas are $0.48 a pound.");
+      break;
+    case "answer":
+      console.log("Cherries are $3.00 a pound.");
+      break;
+  }
+}
+
+// функция сохранения массива с комментариями в localstorage
 function saveComments() {
   localStorage.setItem("comments", JSON.stringify(comments));
 }
 
+// функция загрузки массива с комментариями из localstorage
 function loadComments() {
   if (localStorage.getItem("comments"))
     comments = JSON.parse(localStorage.getItem("comments"));
   showComments();
 }
 
+// функция для отображения комментариев (каждого элемента массива comments)
 function showComments() {
   let commentField = document.getElementById("comment-field");
   let out = "";
