@@ -85,43 +85,48 @@
             <div class="comments">
               <div class="comment-section1">
                 <div class="numberOfComments" id="numberOfComments"></div>
-                <div class="filter" id="filter">
-                  <select>
-                    <option value="date">По дате</option>
-                    <option value="grade">По количеству оценок</option>
-                    <option value="relevance">По актуальности</option>
-                    <option value="answer">По количеству ответов</option>
-                  </select>
-                </div>
-                <div class="select" id="select">
-                  <span class="selectText">Избранное</span>
-                  <img src="./images/Group 1171274238.svg" />
+                <div class="filterAndSelect">
+                  <div class="filter" id="filter">
+                    <select class="selectFilter">
+                      <option value="date">По дате</option>
+                      <option value="grade">По количеству оценок</option>
+                      <option value="relevance">По актуальности</option>
+                      <option value="answer">По количеству ответов</option>
+                    </select>
+                  </div>
+                  <div class="select" id="select">
+                    <span class="selectText">Избранное</span>
+                    <img src="./images/Group 1171274238.svg" />
+                  </div>
                 </div>
               </div>
 
               <div class="comment-body" id="comment-body">
-                <div class="photo"></div>
-                <div class="form-group">
-                  <div class="groupNameNumber">
-                    <input
-                      class="anyMessage"
-                      type="text"
-                      id="name"
-                      placeholder="your name"
-                    />
-                    <div class="numberOfLetter" id="numberOfLetter">
-                      Макс. 1000 символов
+                <div class="photoForm">
+                  <div class="photo"></div>
+                  <div class="form-group">
+                    <div class="groupNameNumber">
+                      <input
+                        class="anyMessage nameText"
+                        type="text"
+                        id="name"
+                        placeholder="your name"
+                      />
+                      <div class="numberOfLetter" id="numberOfLetter">
+                        Макс. 1000 символов
+                      </div>
                     </div>
+                    <textarea
+                      class="message "
+                      id="message"
+                      cols="30"
+                      rows="10"
+                      wrap="soft"
+                      placeholder="Введите текст сообщения..."
+                    ></textarea>
                   </div>
-                  <textarea
-                    class="message"
-                    id="message"
-                    cols="30"
-                    rows="10"
-                    wrap="soft"
-                    placeholder="Введите текст сообщения..."
-                  ></textarea>
                 </div>
+
                 <div class="warningBtn">
                   <div class="warning" id="warning"></div>
                   <button type="submit" id="comment-add" class="btn">

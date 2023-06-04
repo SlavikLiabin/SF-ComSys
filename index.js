@@ -91,7 +91,7 @@ select.addEventListener("change", () => {
 function arraySorting() {
   switch (someSelect) {
     case "date":
-      comments.sort((a, b) => a.time - b.time);
+      comments.sort((a, b) => -(a.time - b.time));
       console.log(comments);
       break;
     case "grade":
@@ -123,11 +123,12 @@ function showComments() {
   let commentField = document.getElementById("comment-field");
   let out = "";
   comments.forEach(function (item) {
-    out += `<p class="text-right small"><em>${timeConverter(
-      item.time
-    )}</em></p> `;
-    out += `<p class="alert alert-primary">${item.name}</p> `;
-    out += `<p class="alert alert-success">${item.body}</p> `;
+    out += `<div class="nameDate"> <span class="nameText">${
+      item.name
+    }</span> <span class="dateText">${timeConverter(item.time)}</span></div>`;
+    // out += `<p class="nameText">${item.name}</p> <p class="dateText">${timeConverter(item.time)}</p>`;
+    out += `<p class="messageText">${item.body}</p> `;
+    // out += `<div class="grade"><button class="btnMinus"></button></div>`
   });
   commentField.innerHTML = out;
 }
